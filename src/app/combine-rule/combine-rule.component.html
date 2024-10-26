@@ -1,0 +1,24 @@
+<p>combine-rule works!</p>
+<div class="container">
+    <h2>Combine Rules</h2>
+    <form (ngSubmit)="onCombine()">
+      <div class="form-group">
+        <label for="rules">Enter Rules (comma-separated):</label>
+        <input
+          type="text"
+          id="rules"
+          [(ngModel)]="rules"
+          name="rules"
+          class="form-control"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Combine Rules</button>
+    </form>
+  
+    <div *ngIf="combinedAstNode">
+      <h3>Combined AST:</h3>
+      <pre>{{ combinedAstNode | json }}</pre>
+    </div>
+  </div>
+  

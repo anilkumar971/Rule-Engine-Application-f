@@ -1,0 +1,36 @@
+<p>evaluate-rule works!</p>
+<div class="container">
+    <h2>Evaluate Rule</h2>
+    <form (ngSubmit)="onEvaluate()">
+      <div class="form-group">
+        <label for="ruleString">Rule String:</label>
+        <input
+          type="text"
+          id="ruleString"
+          [(ngModel)]="ruleString"
+          name="ruleString"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="data">Data (JSON format):</label>
+        <textarea
+          id="data"
+          [(ngModel)]="data"
+          name="data"
+          class="form-control"
+          rows="5"
+          required
+        ></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Evaluate Rule</button>
+    </form>
+  
+    <div *ngIf="evaluationResult !== null">
+      <h3>Evaluation Result: {{ evaluationResult ? 'True' : 'False' }}</h3>
+    </div>
+  </div>
+  

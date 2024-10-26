@@ -1,0 +1,25 @@
+<p>create-rule works!</p>
+
+<div class="container">
+    <h2>Create Rule</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="ruleString">Rule String:</label>
+        <input
+          type="text"
+          id="ruleString"
+          [(ngModel)]="ruleString"
+          name="ruleString"
+          class="form-control"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Create Rule</button>
+    </form>
+  
+    <div *ngIf="astNode">
+      <h3>Generated AST:</h3>
+      <pre>{{ astNode | json }}</pre>
+    </div>
+  </div>
+  
